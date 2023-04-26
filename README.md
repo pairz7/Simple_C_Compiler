@@ -1,4 +1,7 @@
 # Python实现的简易版C语言编译器
+### 正在持续更新中.....
+### Preview: http://pair7z.com/project/compiler/#/
+
 目录结构  
 |---main.py  **暂时没用**  
 |---README.md  
