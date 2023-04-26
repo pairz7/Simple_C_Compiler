@@ -1,0 +1,43 @@
+<!-- 语法分析配置文件 -->
+<!-- 简易C语言语法 -->
+<!-- # 约定: #为开始符 @表示空串 -->
+<!-- 终结符 以空格为分隔 例如 a b c d e f g h -->
+<vt>
+if ( ) { } while % ; = , else + - * / >> << >= <= > < == != int float intn floatn char bool booln charn stringn ++ -- for main return sharp include id . h
+</vt>
+
+<!-- # token与文法符号转换表 -->
+
+<replace>
+# sharp
+</replace>
+
+<!-- # LL1文法 使用→和 | -->
+<!-- 注意要提取左公共因子 消除左递归 -->
+
+
+<grammar>
+G→HEAD int id ( ) { SB }|int id ( ) { SB }
+HEAD→sharp include < id . id > HEAD|@
+SB→S SB|@
+S→IF|ELSE|FOR|WHILE|DEC ;|return VAL ;|{ SB }|id IDBEGIN ;
+IDBEGIN→= EXP|( ARGS )
+DEC→int id NUMDEC|float id NUMDEC|char id NUMDEC|bool id NUMDEC
+NUMDEC→, id NUMDEC|= EXP NUMDEC'|@
+NUMDEC'→, id NUMDEC|@
+EXP→VAL EXP'|( EXP )
+EXP'→OP EXP|OPSG|@
+ARGS→@|VAL ARGS'
+ARGS'→@|, VAL ARGS'
+VAL→id|NUM|stringn
+OP→+|-|*|/|%|>>|<<|==|!=|>=|<=|>|<
+OPSG→++|--
+NUM→intn|floatn|charn|booln
+IF→if ( EXP )
+ELSE→else S
+FOR→for ( FOREXP ; EXP ; FOREXP )
+FOREXP→EXP|DEC
+WHILE→while ( EXP )
+</grammar>
+
+
