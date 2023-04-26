@@ -3,11 +3,11 @@
 |---main.py  **暂时没用**  
 |---README.md  
 |---test.c   **测试代码**  
-|---Lexer.py  **词法分析器**
-|---Lexer.py  **改造版词法分析器 用于和语法分析配合**
-|---Syntaxer.py  **语法分析器**
-|---config
-|------simple_c_grammar.xml **语法分析配置 包括文法等配置**
+|---Lexer.py  **词法分析器**  
+|---Lexer.py  **改造版词法分析器 用于和语法分析配合**  
+|---Syntaxer.py  **语法分析器**  
+|---config  
+|------simple_c_grammar.xml **语法分析配置 包括文法等配置**  
 
 ##词法分析器
 ###使用方法
