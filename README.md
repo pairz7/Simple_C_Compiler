@@ -9,8 +9,8 @@
 |---config  
 |------simple_c_grammar.xml **语法分析配置 包括文法等配置**  
 
-##词法分析器  
-###使用方法
+## 词法分析器  
+### 使用方法
 命令格式： python ./Component/Lexer.py 源代码文件  
 例如：
 >python ./Component/Lexer.py ./test.c
